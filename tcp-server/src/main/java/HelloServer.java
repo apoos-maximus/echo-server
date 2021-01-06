@@ -7,6 +7,7 @@ public class HelloServer {
     public static void main(String[] args) throws IOException {
         ServerSocket ss = new ServerSocket(6666);
         Socket s = ss.accept();
+        System.out.println("listnening on port:6666")
         DataInputStream din = new DataInputStream(s.getInputStream());
         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,7 +21,7 @@ public class HelloServer {
             dout.writeUTF(str2);
             dout.flush();
         }
-        din.close();
+        din.close();        // Server stops listening
         s.close();
         ss.close();
     }

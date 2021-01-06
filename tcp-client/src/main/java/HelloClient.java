@@ -17,7 +17,7 @@ public class HelloClient {
                 str2 = din.readUTF();
                 System.out.println("Server says : " + str2);
             }
-        dout.close();
+        dout.close();       // Client stops talking
         s.close();
     }
 }
